@@ -14,7 +14,11 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("mysql", "root:root@/")
+	usuario :="root"
+	contrasenia := "root"
+
+	
+	db, err := sql.Open("mysql",usuario + ":"+contrasenia+"@/")
 	if err != nil {
 		panic(err.Error())
 	}
@@ -30,7 +34,7 @@ func main() {
 	db.Close()
 
 
-	db, err = sql.Open("mysql", "root:root@/my_db")
+	db, err = sql.Open("mysql", usuario + ":"+contrasenia+"@/my_db")
 	if err != nil {
 		panic(err.Error())
 	}
